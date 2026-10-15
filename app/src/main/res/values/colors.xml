@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores personalizados para la tarjeta -->
+    <color name="cardContainer">#1E1B2E</color>            <!-- Fondo morado oscuro elegante -->
+    <color name="card_title">#FFFFFF</color>                <!-- Título blanco -->
+    <color name="card_description">#B3ACE2</color>          <!-- Texto de descripción suave -->
+    <color name="card_accent">#03DAC5</color>               <!-- Acento en verde azulado para responsable e iconos -->
+    <color name="card_badge_bg">#312852</color>             <!-- Fondo del badge de estado -->
+    <color name="card_badge_text">#BB86FC</color>           <!-- Texto del badge en púrpura brillante -->
+</resources>
