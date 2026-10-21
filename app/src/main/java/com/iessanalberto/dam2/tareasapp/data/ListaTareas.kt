@@ -79,3 +79,12 @@ val listaTareas: MutableList<Tarea> = mutableListOf(
         descripcion = "Ir al supermercado con la lista compartida"
     )
 )
+fun buscarTarea(id: Int) : Tarea?{
+    var task : Tarea? = null
+    for (tarea in listaTareas){
+        if (tarea.id == id){
+            task = tarea
+        }
+    }
+    return task
+}

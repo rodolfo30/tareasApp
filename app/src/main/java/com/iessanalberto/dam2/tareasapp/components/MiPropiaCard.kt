@@ -32,7 +32,9 @@ import com.iessanalberto.dam2.tareasapp.models.Tarea
 @Composable
 fun MiPropiaCard(
     tarea: Tarea,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    // Lo de abajo es para cuando pinchen en las tarjetas, que haga algo
+    onClick: () -> Unit
 ) {
     ElevatedCard(
         colors = CardDefaults.cardColors(
@@ -42,7 +44,9 @@ fun MiPropiaCard(
         shape = RoundedCornerShape(16.dp),
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        // Esto hay que ponerlo para cuando pinchen en las tarjetas
+        onClick = onClick
     ) {
         Column(
             modifier = Modifier

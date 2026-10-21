@@ -28,19 +28,23 @@ fun TareasScreen(navController: NavController) {
             }
         }
     ) { paddingValues ->
-        TareasScreenBodyContent(modifier = Modifier.padding(paddingValues = paddingValues))
+        // Forma para hacer un navegador con argumentos
+        TareasScreenBodyContent(modifier = Modifier.padding(paddingValues = paddingValues), navController = navController)
     }
 }
 
 @Composable
-fun TareasScreenBodyContent(modifier: Modifier) {
+fun TareasScreenBodyContent(modifier: Modifier, navController : NavController) {
     LazyColumn(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         items(listaTareas) { tarea ->
-           MiPropiaCard(tarea = tarea)
+           MiPropiaCard(tarea = tarea, onClick = {
+               // Asi se hace para que navegue con argumentos
+               navController.navigate(route = AppScreens.EditDeleteTaskScreens.route + "/${tarea.id}")
+           })
         }
     }
 }
