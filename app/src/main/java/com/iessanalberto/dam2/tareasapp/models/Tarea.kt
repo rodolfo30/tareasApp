@@ -4,7 +4,7 @@ data class Tarea(
     var nombre: String,
     var responsable: String,
     var descripcion: String,
-    var estado: String = "Pendiente"
+    var estado: Estado = Estado.PENDIENTE
 ) {
     companion object {
         var contador = 0
@@ -18,4 +18,11 @@ data class Tarea(
     }
     // Se puede poner en el constructor si quieres tener el id ahi o puedes hacerlo fuera y asi no lo tienes en el constructor, pero sigues teniendo el ID
     val id: Int = siguienteID()
+
+
+    enum class Estado(val etiqueta: String){
+        PENDIENTE("Pendiente"),
+        EN_PROGRESO("En progreso"),
+        COMPLETADO("Completada")
+    }
 }
