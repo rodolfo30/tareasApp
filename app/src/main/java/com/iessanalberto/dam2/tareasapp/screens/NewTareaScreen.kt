@@ -107,7 +107,7 @@ fun NewTareaBodyContent(navController: NavController, modifier: Modifier) {
                         nombre = nombre,
                         responsable = responsable,
                         descripcion = descripcion,
-                        estado = Estado.PENDIENTE
+                        estado = estadoSeleccionado
                     )
                 )
             }

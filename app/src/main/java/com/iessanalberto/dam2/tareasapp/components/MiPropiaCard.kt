@@ -21,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -109,16 +110,22 @@ fun MiPropiaCard(
 }
 
 @Composable
-private fun EstadoBadge(estado: String) {
+private fun EstadoBadge(estado: Tarea.Estado) {
+    val (bgColor, textColor) = when (estado) {
+        Tarea.Estado.PENDIENTE -> Pair(Color(0xFFD32F2F), Color.White)   // Rojo
+        Tarea.Estado.EN_PROGRESO -> Pair(Color(0xFFFBC02D), Color(0xFF1A1A1A)) // Amarillo
+        Tarea.Estado.COMPLETADO -> Pair(Color(0xFF388E3C), Color.White)  // Verde
+    }
+
     Box(
         modifier = Modifier
             .clip(RoundedCornerShape(12.dp))
-            .background(colorResource(R.color.card_badge_bg))
+            .background(bgColor)
             .padding(horizontal = 10.dp, vertical = 4.dp)
     ) {
         Text(
-            text = estado,
-            color = colorResource(R.color.card_badge_text),
+            text = estado.etiqueta,
+            color = textColor,
             style = MaterialTheme.typography.labelSmall,
             fontWeight = FontWeight.Bold
         )
